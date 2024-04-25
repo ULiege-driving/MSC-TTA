@@ -1,6 +1,6 @@
 #  Multi-Stream Cellular Test-Time Adaptation of Real-Time Models Evolving in Dynamic Environments
 
-This repository provides the implementation of our paper (add link to paper), presented at CVPR WAC 2024.
+This repository provides the implementation of our paper (add link to paper), presented at CVPR WAD 2024.
 
 
 <div align="center">
@@ -82,4 +82,4 @@ If you find this dataset useful in your research, please consider citing:
 ```
 
 ## License
-[CC-BY-4.0](https://github.com/ULiege-driving/DADE/blob/main/LICENSE)
+[AGPL-3.0](https://github.com/ULiege-driving/MSC-TTA/blob/main/LICENSE)
