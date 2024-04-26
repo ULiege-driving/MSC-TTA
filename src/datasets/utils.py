@@ -10,10 +10,9 @@ def get_all_env_frames(root_folder, start_index, end_index, env_id, args, cached
     semantic_mask_paths = []
     timestamps = []
 
-    # pseudo_folder = 'pseudo' if args.teacher_type == 'segformer' else f'pseudo_{args.teacher_type}'
-    pseudo_folder = 'pseudo'
+    pseudo_folder = 'pseudos'
 
-    gt_keyword = 'semantic_masks'
+    gt_keyword = 'semantic_masks_npz' if cached else 'semantic_masks'
 
     timestamp_dilatation = 1
 
@@ -91,10 +90,10 @@ def get_all_vehicle_frames(root_folder, start_index, end_index, vehicle_folder, 
     semantic_mask_paths = []
     timestamps = []
 
-    #pseudo_folder = 'pseudo' if args.teacher_type == 'segformer' else f'pseudo_{args.teacher_type}'
-    pseudo_folder = 'pseudo'
+    pseudo_folder = 'pseudos'
 
-    gt_keyword = 'semantic_masks'
+    gt_keyword = 'semantic_masks_npz' if cached else 'semantic_masks'
+
     timestamp_dilatation = 1
 
     ext = 'npz' if cached else 'png'

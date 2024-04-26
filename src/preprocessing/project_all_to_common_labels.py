@@ -29,12 +29,8 @@ pgt_transform = transforms.Compose([
 ])
 
 def process_file(img_path):
-    to_pil = ToPILImage()
 
-    img = Image.open(img_path)
-    if 'semantic_masks' in img_path:
-        transformed_img = gt_transform(img)
-    elif 'pseudo' in img_path:
+    if 'pseudos' in img_path:
         transformed_img = pgt_transform(img)
     else:
         return
@@ -47,11 +43,11 @@ def process_file(img_path):
     np.savez_compressed(save_path, transformed_img)
 
 
-def parallel_apply_transforms(root_dir, num_processes=120):
+def parallel_apply_transforms(root_dir, num_processes=20):
     # List all .png files in 'semantic_masks' and 'pseudo' folders
     all_files = []
     for dp, dn, filenames in os.walk(root_dir):
-        if 'pseudo' in dp or 'semantic_masks' in dp:
+        if 'pseudos' in dp:
             all_files.extend([os.path.join(dp, f) for f in filenames if f.endswith('.png')])
 
     # Limit the number of processes based on available CPU cores and requested processes
@@ -63,5 +59,6 @@ def parallel_apply_transforms(root_dir, num_processes=120):
 
 
 if __name__ == "__main__":
-    dataset_root = ''
+    from arguments import args
+    dataset_root = args.dataset
     parallel_apply_transforms(dataset_root)
