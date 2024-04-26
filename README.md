@@ -2,7 +2,7 @@
 
 <div align="center">
 <div></div>
-<img src="images/MSC_picture.png" width=50% height=auto> 
+<img src="images/MSC_picture.png" width=70% height=auto> 
 </div>
 
 This repository provides the implementation of our paper (add link to paper), presented at CVPR WAD 2024.
@@ -69,7 +69,7 @@ Similarly, you can call `pretraining_dynamic.py` to obtain pretrained models on 
 
 <div align="center">
 <div></div>
-<img src="images/MSC-TTA-pipeline.png" width=80% height=auto> 
+<img src="images/MSC-TTA-pipeline.png" width=100% height=auto> 
 </div>
 
 The `adapt.sh` script provide an example to adapt 7 models from scratch on the three-last hours of DADE-static. Per default, the configuration does not save confusion matrices and simply logs the accumulated mIoU over the adaptation period.
